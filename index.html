@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- karakter set yang digunakan dalam halaman sebagai UTF-8, yang merupakan karakter set umum untuk halaman web -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mengatur tampilan halaman agar sesuai dengan lebar perangkat dan mengatur tingkat zoom awal ke 1.0. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI</title>
+    <!-- Menghubungkan file CSS lokal bernama "style.css"  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Menghubungkan file CSS dari Font Awesome, yang berisi ikon font yang digunakan dalam desain -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Menghubungkan file CSS dari Google Fonts untuk mengganti jenis huruf (font) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap">
+    <!-- Menghubungkan file JavaScript dari Swal (SweetAlert2), yang digunakan untuk membuat pop-up pesan -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+</head>
+<body>
+    <!-- first page configuration -->
+    <div id="calculator">
+        <h2>Kalkulator BMI</h2>
+        <!-- sumber : https://www.halodoc.com/bmi-calculator/know-more?locale=in -->
+        <p id="static-desc" class="font-desc">BMI atau indeks massa tubuh adalah ukuran penting yang membantu Anda melacak apakah Anda sehat, normal, kelebihan berat badan, atau obesitas. Menurut National Institutes of Health (NIH), Indeks Massa Tubuh adalah indikator bergengsi yang membantu Anda melacak lemak tubuh, dan lemak ini sangat berkorelasi dengan risiko kematian dan penyakit. Anda dapat menghitung bmi dengan kemudahan perhitungan bmi dan seluruh perhitungan didasarkan pada tinggi dan berat badan Anda.
+        </p>
+        <!-- main function of BMI calculator -->
+
+        <!-- mendefinisikan sebuah div (kotak) dengan kelas CSS bernama "card."  -->
+        <div class="card">
+            <form id="form-bmi" name="" class="form">
+                <div class="form-group-g">
+                    <strong>Jenis Kelamin</strong>
+                    <br>
+                    <input type="radio" name="gender" value="m" required="true">
+                    <label for="gender">Pria</label>
+                    <i class="fas fa-male"></i>
+                    <input type="radio" name="gender" value="f" required="true">
+                    <label for="gender">Wanita</label>
+                    <i class="fas fa-female"></i>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Umur (Tahun)</label>
+                    <div class="icon-input">
+                        <i class="fas fa-pen"></i>
+                        <input name="age" type="number" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Berat Badan (kg)</label>
+                    <div class="icon-input">
+                        <i class="fas fa-pen"></i>
+                        <input name="weight" type="number" step="0.1" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="height">Tinggi Badan (cm)</label>
+                    <div class="icon-input">
+                        <i class="fas fa-pen"></i>
+                        <input name="height" type="number" step="0.1" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="calculate" type="submit" class="button">Hitung BMI</button>
+                    <button id="reset" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    
+        <!--  mendefinisikan sebuah div (kotak) dengan kelas CSS bernama "footer." digunakan bagian bawah (footer) dari halaman web. 
+              Bagian "footer" umumnya berisi informasi tambahan seperti informasi kontak, tautan ke halaman lain, hak cipta, atau informasi lain yang relevan untuk situs web tersebut. -->
+        <div class="footer">
+            <p class="font-big">Fitur:</p>
+            <p class="font-desc">
+                1. Menghitung berat-badan ideal (BMI)
+                <br>
+                2. Menentukan kategori berat badan ideal atau tidak
+                <br>
+                3. Mempersiapkan program penurunan berat badan
+            </p>
+            <p id="static-desc" class="font-desc">
+                Kalkulator ini dapat digunakan oleh seseorang yang berusia 20 tahun ke atas.
+                Perlu diingat bahwa Kalkulator BMI ini tidak dapat diaplikasikan untuk ibu hamil dan anak-anak karena standar BMI yang berbeda. 
+
+                <p id="static-desc" class="font-desc"> Hal yang perlu diperhatikan pada Kalkulator BMI:
+                    BMI Normal berada pada kisaran 17-25
+                    Jika angka BMI melebihi 25, maka kamu memiliki berat badan berlebih
+                    Jika angka BMI berada di bawah 17, maka kamu memiliki berat badan rendah
+                    Jika angka BMI sudah melebihi angka 27, sebaiknya segera dilakukan penanganan untuk mencegah timbulnya penyakit
+                </p>
+            </p>
+
+        </div>
+    </div>
+  
+    <div id="results">
+        <h2>
+            <strong>Hasil BMI</strong>
+        </h2>
+        <!--Hasil BMI -->
+        <div class="card-1">
+            <form id="" name="" class="form-1">
+                <div class="form-group-1">
+                    <p id="bmi-category-1" class="font-big"></p>
+                    <p id="bmi-result" class="font-big"></p>
+                    <p id="bmi-category-2" class="font-desc"></p>
+                </div>
+                <div class="button-group">
+                    <button id="download" type="submit" class="button">Download Hasil BMI</button>
+                </div>
+            </form>
+        </div>
+        <!-- footer explanation Hasil BMI -->
+        <div class="footer">
+            <p id="bmi-category-3" class="font-desc"></p>
+            <p id="bmi-category-4" class="font-desc"></p>
+            <p id="static-desc" class="font-desc">Setelah melihat hasil ini, sebaiknya tetap konsultasi ke dokter agar tahu lebih pasti kondisi kesehatan Anda saat ini. 
+                Hasil kalkulator BMI ini tidak bisa digunakan jika anda memiliki gangguan pola makan. 
+                Anda dapat berkonsultasi dengan ahli Gizi kami dan mendaftar melalui online untuk mendapatkan Layanan telemedisin</p>
+            <div class="button-group">
+                <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Contact Nutritionist via Apps</button>
+                <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Online Registration</button>
+            </div>
+            <p id="static-desc" class="font-desc">BMI tidak sepenuhhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu melakukan konsultasi
+                lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.
+            </p>
+        </div>
+        <!-- Hanya untuk Kategori Obesitas -->
+        <div id="obese-only" class="card-2">
+            <form id="obese-test" name="" class="form-1">
+                <div class="form-group-1">
+                    <p class="font-big">
+                        Beberapa penyakit yang berasal dari kegemukan:
+                    </p>
+                    <p class="font-desc">
+                        Diabetes
+                        <br>
+                        Hipertensi
+                        <br>
+                        Sakit Jantung
+                        <br>
+                        Osteoarthritis
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Contact Doctor via Apps</button>
+                    <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')" class="button">Online Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <!-- download playstore appstore -->
+    <div id="download-me">
+        <p id="" class="font-big">Download Aplikasi</p>
+        <p>Unduh Aplikasi Kalkulator BMI untuk Ponsel Anda, Jadi Anda dapat menghitung nilai di tangan Anda.</p>
+        <a href="https://play.google.com/store/games?device=windows" target="_blank">
+            <img src="assets/playstore.png" alt="Play Store" class="playstore">
+        </a>
+        <a href="https://www.apple.com/id/app-store" target="_blank">
+            <img src="assets/appstore.png" alt="App Store" class="appstore">
+        </a>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

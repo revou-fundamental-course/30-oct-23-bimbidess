@@ -1,0 +1,225 @@
+/* fonts google fonts */
+/* Buka situs web Google Fonts di https://fonts.google.com/. */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Quicksand:wght@400;700&display=swap" rel="stylesheet');
+
+/* responsive mobile phones: */
+@media only screen and (max-width: 767px) {
+    body {
+      width: 90%;
+    }
+}
+
+/* responsive desktop: */
+@media only screen and (min-width: 768px) {
+    body {
+        width: 700px;
+    }
+}
+
+body {
+    background-size: cover;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.92rem;
+    color: rgb(32,42,68);
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.card {
+    border: 0px solid;
+    border-radius: 7px;
+    background-color: #F1B4BB;
+    padding: 1em 2em;
+}
+
+label {
+    margin-bottom: 7px;
+}
+
+.form-group-g {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.form-group-1 {
+    color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"]{
+    border: 3px solid;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: white;
+    padding-top: 5px;
+}
+
+.icon-input {
+    display: flex;
+    align-items: center;
+}
+
+.icon-input i {
+    margin-right: 7px;
+    color: rgb(251, 247, 247);
+}
+
+.button-group {
+    margin-top: 30px;
+}
+
+#calculate {
+    background-color: #82A0D8;
+    color: #875f5f;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#calculate:hover {
+    background-color: #C1D8C3;
+    color: #fff;
+}
+
+#reset {
+    background-color: #AEC3AE;
+    color: #875f5f;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#reset:hover {
+    background-color: #9ab2cb;
+    color: #fff;
+}
+
+#static-desc {
+    text-align: justify;
+}
+
+.font-big {
+    font-size: 150%;
+    text-shadow: 1px 1px #c2c2c2
+}
+
+.font-desc {
+    font-size: 95%;
+    text-shadow: 1px 1px #c2c2c2
+}
+
+/* halaman kedua */
+
+.card-1 {
+    border: 0px solid;
+    border-radius: 7px;
+    background-color: rgba(175, 161, 230, 0.6);
+    padding: 2em;
+    text-align: center;
+}
+
+#bmi-category-3 {
+    text-align: justify;
+}
+
+#bmi-category-4 {
+    text-align: justify;
+}
+
+#download {
+    border: 0px solid #FFB6D9;
+    background-color: #FFB6D9;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: bold;
+    font-size: 90%;
+    color: black;
+    cursor: pointer;
+}
+
+#download:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+#consultation {
+    border: 0px solid #F4EEEE;
+    background-color: #F4EEEE;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: bold;
+    font-size: 90%;
+    color: black;
+    cursor: pointer;
+}
+
+#consultation:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+#registration {
+    border: 0px solid #F4EEEE;
+    background-color: #F4EEEE;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: bold;
+    font-size: 90%;
+    color: black;
+    cursor: pointer;
+}
+
+#registration:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.card-2 {
+    border: 0px solid;
+    border-radius: 7px;
+    background-color: rgba(126, 60, 63, 0.6);
+    padding: 2em;
+    text-align: center;
+}
+
+#results {
+    display: none;
+}
+
+#download-me {
+    text-align: center;
+}
+
+.playstore {
+    width: 33.5%;
+    height: auto;
+    margin-right: 25px;
+}
+
+.appstore {
+    width: 30%;
+    height: auto;
+}
